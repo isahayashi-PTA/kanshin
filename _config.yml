@@ -47,3 +47,13 @@ markdown: kramdown
 sass:
   sass_dir: _sass
   style: compressed
+# 以下のコードを一番最後に追加します
+plugins:
+  - jekyll-archives
+
+jekyll-archives:
+  enabled:
+    - categories
+  layout: 'category'
+  permalinks:
+    category: '/category/:name/'
