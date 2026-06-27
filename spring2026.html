@@ -18,7 +18,13 @@ title: "令和8年春号"
     <div class="category-posts" style="max-width: 800px; margin: 0 auto;">
       
       {% for post in site.posts %}
-        {% if post.categories contains "令和8年春号" %}
+        {% comment %}
+          💡 記事のなかに「令和8年春号」という文字が含まれているかを、
+          カッコなどの影響を受けない強力な方法（jsonifyしてチェック）で判定します。
+        {% endcomment %}
+        {% assign post_categories = post.categories | jsonify %}
+        {% if post_categories contains "令和8年春号" %}
+        
         <article style="display: flex; gap: 20px; background: #fff; border: 1px solid #e9ecef; border-radius: 8px; padding: 20px; margin-bottom: 20px; box-shadow: 0 2px 8px rgba(0,0,0,0.02); overflow: hidden;">
           
           <div style="flex: 0 0 120px; width: 120px; height: 120px;">
@@ -34,7 +40,8 @@ title: "令和8年春号"
           <div style="flex: 1;">
             <h2 style="font-size: 1.25rem; margin-top: 0; margin-bottom: 10px;">
               <a href="{{ post.url | relative_url }}" style="color: #2c3e50; text-decoration: none; font-weight: 700;">
-                {{ post.title }}  </a>
+                {% if post.title %}{{ post.title }}{% else %}タイトル未設定{% endif %}
+              </a>
             </h2>
             <p style="color: #6c757d; font-size: 0.9rem; line-height: 1.5; margin-bottom: 0;">
               {{ post.description }}
@@ -47,6 +54,7 @@ title: "令和8年春号"
           </div>
 
         </article>
+        
         {% endif %}
       {% endfor %}
 
