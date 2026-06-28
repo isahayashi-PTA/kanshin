@@ -49,3 +49,20 @@ layout: default
   {% endif %}
 
 </main><!-- .main-content -->
+<div style="text-align: center; margin-top: 50px; margin-bottom: 50px; padding-top: 30px; border-top: 1px dashed #e9ecef;">
+  
+  {% if post.categories contains "令和8年春号" %}
+    <a href="{{ site.baseurl }}/spring2026.html" style="display: inline-block; background: #5a738e; color: #ffffff; padding: 12px 24px; border-radius: 4px; text-decoration: none; font-size: 0.95rem; font-weight: bold; box-shadow: 0 4px 6px rgba(0,0,0,0.05); margin: 5px; transition: background 0.2s;">
+      ⬅ トピック一覧に戻る
+    </a>
+  {% else %}
+    <a href="{{ site.baseurl }}/" style="display: inline-block; background: #5a738e; color: #ffffff; padding: 12px 24px; border-radius: 4px; text-decoration: none; font-size: 0.95rem; font-weight: bold; box-shadow: 0 4px 6px rgba(0,0,0,0.05); margin: 5px; transition: background 0.2s;">
+      ⬅ トピック一覧に戻る
+    </a>
+  {% endif %}
+
+  <a href="{{ site.baseurl }}/" style="display: inline-block; background: #e9ecef; color: #495057; padding: 12px 24px; border-radius: 4px; text-decoration: none; font-size: 0.95rem; font-weight: bold; margin: 5px; transition: background 0.2s;">
+    🏠 広報紙トップへ戻る
+  </a>
+
+</div>
