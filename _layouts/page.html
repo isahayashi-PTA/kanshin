@@ -9,11 +9,30 @@ layout: default
       {% if page.feature_image and page.feature_image != "" %}
       <figure class="post-thumbnail image-card width-wide">
         <img src="{{ page.feature_image | relative_url }}" alt="{{ page.title }}">
-      </figure><!-- .post-thumbnail -->
-      {% endif %}
-    </header><!-- .post-header -->
-    <div class="post-content">
+      </figure>{% endif %}
+    </header><div class="post-content">
       {{content}}
-    </div><!-- .post-content -->
-  </article><!-- .post -->
-</main><!-- .site-main -->
+    </div></article><div style="text-align: center; margin-top: 50px; margin-bottom: 50px; padding-top: 30px; border-top: 1px dashed #e9ecef; clear: both;">
+    
+    {% assign page_categories = page.categories | jsonify %}
+    {% if page_categories contains "令和8年春号" %}
+      <a href="{{ site.baseurl }}/spring2026.html" style="display: inline-block; background: #5a738e; color: #ffffff; padding: 12px 24px; border-radius: 4px; text-decoration: none; font-size: 0.95rem; font-weight: bold; box-shadow: 0 4px 6px rgba(0,0,0,0.05); margin: 5px; transition: background 0.2s;">
+        ⬅ トピック一覧に戻る
+      </a>
+    {% else %}
+      <a href="{{ site.baseurl }}/" style="display: inline-block; background: #5a738e; color: #ffffff; padding: 12px 24px; border-radius: 4px; text-decoration: none; font-size: 0.95rem; font-weight: bold; box-shadow: 0 4px 6px rgba(0,0,0,0.05); margin: 5px; transition: background 0.2s;">
+        ⬅ トピック一覧に戻る
+      </a>
+    {% endif %}
+
+    <a href="{{ site.baseurl }}/" style="display: inline-block; background: #e9ecef; color: #495057; padding: 12px 24px; border-radius: 4px; text-decoration: none; font-size: 0.95rem; font-weight: bold; margin: 5px; transition: background 0.2s;">
+      🏠 広報紙トップへ戻る
+    </a>
+
+  </div>
+
+</main>```
+
+---
+
+上書き保存して1〜2分後に実際の記事ページを確認してみてください。これでついに、求めていた理想の「トピック一覧に戻る」ボタンが姿を現します！
