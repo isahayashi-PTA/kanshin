@@ -17,7 +17,7 @@ title: "令和8年春号"
 
     <div class="category-posts" style="max-width: 800px; margin: 0 auto;">
       
-      {% for post in site.posts %}
+      {% for post in site.posts reverse %}
         {% comment %}
           💡 記事のなかに「令和8年春号」という文字が含まれているかを、
           カッコなどの影響を受けない強力な方法（jsonifyしてチェック）で判定します。
