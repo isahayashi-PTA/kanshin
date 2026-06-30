@@ -11,13 +11,15 @@ title: "デジタルブック版（テスト）"
   </p>
 
   <div id="flipbook-wrapper" style="width: 100%; max-width: 1000px; display: flex; justify-content: center;">
-    <div id="flipbook" dir="rtl">
-      <div class="page dummy-page" style="background: transparent !important; box-shadow: none !important;"></div>
-      
+    <div id="flipbook" dir="ltr">
       <div class="page" style="background-image:url('{{ site.baseurl }}/assets/images/kanshin1.png');"></div>
+      
       <div class="page" style="background-image:url('{{ site.baseurl }}/assets/images/kanshin2.png');"></div>
       <div class="page" style="background-image:url('{{ site.baseurl }}/assets/images/kanshin3.png');"></div>
+      
       <div class="page" style="background-image:url('{{ site.baseurl }}/assets/images/kanshin4.png');"></div>
+      
+      <div class="page" style="background: transparent !important; box-shadow: none !important;"></div>
     </div>
   </div>
 
@@ -71,13 +73,12 @@ title: "デジタルブック版（テスト）"
     // 初期化
     flipbook.turn({
       display: 'double',    // 見開き表示
-      direction: 'rtl',     // 右開き
+      direction: 'ltr',     // 内部処理は安定の通常モード
       acceleration: true,
       gradients: true,
       elevation: 50
     });
 
-    // 画面サイズ変更時にリサイズ
     $(window).resize(function() {
       updateSize();
     });
