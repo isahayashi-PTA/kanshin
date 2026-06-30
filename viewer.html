@@ -1,0 +1,47 @@
+---
+layout: default
+title: "デジタルブック版（テスト）"
+---
+
+<div class="viewer-container" style="margin: 20px auto; max-width: 800px; text-align: center;">
+  <h2>デジタルビューアー（ページめくりテスト）</h2>
+  <p style="color: #666; font-size: 0.9em;">※パソコンはドラッグ、スマホはスワイプでページがめくれます。</p>
+
+  <div id="flipbook" style="margin: 0 auto; box-shadow: 0 4px 10px rgba(0,0,0,0.15);">
+    <div class="page" style="background-image:url('{{ site.baseurl }}/images/kanshin1.png'); background-size: 100% 100%;"></div>
+    <div class="page" style="background-image:url('{{ site.baseurl }}/images/kanshin2.png'); background-size: 100% 100%;"></div>
+    <div class="page" style="background-image:url('{{ site.baseurl }}/images/kanshin3.png'); background-size: 100% 100%;"></div>
+    <div class="page" style="background-image:url('{{ site.baseurl }}/images/kanshin4.png'); background-size: 100% 100%;"></div>
+  </div>
+</div>
+
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/turn.js/3/turn.min.js"></script>
+
+<script>
+  $(window).ready(function() {
+    // 画面の横幅に合わせてビューアーのサイズを自動調整
+    var containerWidth = $('.viewer-container').width();
+    var bookWidth = containerWidth > 800 ? 800 : containerWidth;
+    var bookHeight = bookWidth * 0.7; // 横長（見開き）の比率。縦長（A4など）にしたい場合は 1.4 などに調整
+
+    $('#flipbook').turn({
+      width: bookWidth,
+      height: bookHeight,
+      autoCenter: true,
+      gradients: true, // めくるときの影のエフェクト
+      acceleration: true
+    });
+  });
+</script>
+
+<style>
+  #flipbook {
+    width: 100%;
+  }
+  #flipbook .page {
+    background-color: #fff;
+    background-repeat: no-repeat;
+    background-position: center;
+  }
+</style>
