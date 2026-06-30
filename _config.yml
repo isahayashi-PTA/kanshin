@@ -1,13 +1,16 @@
 lang: ja
 title: "諌早市PTA連合会広報紙『諫親』"
-description: "諌早市PTA連合会広報紙アーカイブサイトです。"
+description: "諌早市PTA連合会広報紙掲載サイトです。"
 baseurl: "/kanshin"
 url: "https://isahayashi-PTA.github.io"
 favicon: images/favicon.png
-google_analytics: ""
+google_analytics: G-1W1GCTG249
+
 navigation:
   - text: Home
     url: /
+  - text: デジタルブック「諫親」
+    url: /viewer.html
   - text: About
     url: /about/
   - text: Style Guide
@@ -17,8 +20,6 @@ navigation:
   - text: Download
     url: https://github.com/JustGoodThemes/Scriptor-Jekyll-Theme
 
-- title: "デジタルブック「諫親」"
-  url: /viewer.html
 # The shortname for your Disqus site to enable comments.
 disqus: justgoodthemes
 
@@ -33,11 +34,11 @@ footer:
 # Plugins
 plugins:
   - jekyll-paginate
+  - jekyll-archives
 
 # http://jekyllrb.com/docs/pagination/
 paginate: 3
 paginate_path: '/page:num/'
-
 
 # Permalinks
 permalink: /:title
@@ -49,14 +50,9 @@ markdown: kramdown
 sass:
   sass_dir: _sass
   style: compressed
-# 以下のコードを一番最後に追加します
-plugins:
-  - jekyll-archives
 
 jekyll-archives:
   enabled:
     - categories
   layout: 'category'
-  permalinks:
-    category: '/category/:name/'
-google_analytics: G-1W1GCTG249
+  permalink: '/category/:name/'
