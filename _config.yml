@@ -17,6 +17,8 @@ navigation:
   - text: Download
     url: https://github.com/JustGoodThemes/Scriptor-Jekyll-Theme
 
+- title: "デジタルブック「諫親」"
+  url: /viewer.html
 # The shortname for your Disqus site to enable comments.
 disqus: justgoodthemes
 
