@@ -12,20 +12,20 @@ title: "デジタルブック版（テスト）"
 
   <div id="flipbook-wrapper" style="width: 100%; max-width: 1000px; display: flex; justify-content: center;">
     <div id="flipbook" dir="ltr">
-      <div class="page" style="background-image:url('{{ site.baseurl }}/assets/images/kanshin1.png');"></div>
-      
-      <div class="page" style="background-image:url('{{ site.baseurl }}/assets/images/kanshin2.png');"></div>
-      <div class="page" style="background-image:url('{{ site.baseurl }}/assets/images/kanshin3.png');"></div>
-      
       <div class="page" style="background-image:url('{{ site.baseurl }}/assets/images/kanshin4.png');"></div>
+      
+      <div class="page" style="background-image:url('{{ site.baseurl }}/assets/images/kanshin3.png');"></div>
+      <div class="page" style="background-image:url('{{ site.baseurl }}/assets/images/kanshin2.png');"></div>
+      
+      <div class="page" style="background-image:url('{{ site.baseurl }}/assets/images/kanshin1.png');"></div>
       
       <div class="page" style="background: transparent !important; box-shadow: none !important;"></div>
     </div>
   </div>
 
   <div style="margin-top: 30px;">
-     <button onclick="$('#flipbook').turn('next')" style="padding: 10px 20px; cursor: pointer; background: #fff; border: 1px solid #ccc; border-radius: 5px;">◀ 次のページ</button>
-     <button onclick="$('#flipbook').turn('previous')" style="padding: 10px 20px; cursor: pointer; background: #fff; border: 1px solid #ccc; border-radius: 5px; margin-left: 10px;">前のページ ▶</button>
+     <button onclick="$('#flipbook').turn('previous')" style="padding: 10px 20px; cursor: pointer; background: #fff; border: 1px solid #ccc; border-radius: 5px;">◀ 次のページ</button>
+     <button onclick="$('#flipbook').turn('next')" style="padding: 10px 20px; cursor: pointer; background: #fff; border: 1px solid #ccc; border-radius: 5px; margin-left: 10px;">前のページ ▶</button>
   </div>
 </div>
 
@@ -33,7 +33,6 @@ title: "デジタルブック版（テスト）"
 <script src="https://cdnjs.cloudflare.com/ajax/libs/turn.js/3/turn.min.js"></script>
 
 <style>
-  /* A4の比率を保つためのスタイル設定 */
   #flipbook {
     width: 90vw;
     height: 63.6vw;
@@ -51,7 +50,6 @@ title: "デジタルブック版（テスト）"
     box-shadow: inset 0 0 50px rgba(0,0,0,0.1);
   }
 
-  /* めくる際のエフェクト用 */
   .turn-page {
     background-color: #ccc;
   }
@@ -61,23 +59,24 @@ title: "デジタルブック版（テスト）"
   $(window).ready(function() {
     var flipbook = $('#flipbook');
 
-    // サイズの自動計算（A4比率を維持）
     function updateSize() {
       var width = $('#flipbook-wrapper').width();
       if (width > 1000) width = 1000;
       var height = width / 1.414;
-      
       flipbook.turn('size', width, height);
     }
 
-    // 初期化
     flipbook.turn({
-      display: 'double',    // 見開き表示
-      direction: 'ltr',     // 内部処理は安定の通常モード
+      display: 'double',
+      direction: 'ltr', // バグを防ぐため通常モードのまま中身を制御
       acceleration: true,
       gradients: true,
       elevation: 50
     });
+
+    // 起動時に自動で最後のページ（実質の表紙）へジャンプさせてスタート！
+    // これにより「左側に表紙がある状態」を作り出します
+    flipbook.turn('page', 4);
 
     $(window).resize(function() {
       updateSize();
