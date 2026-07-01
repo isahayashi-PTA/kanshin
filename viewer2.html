@@ -1,0 +1,42 @@
+---
+layout: default
+title: "デジタルブック版（外部高機能テスト）"
+---
+
+<div class="viewer-outer-container" style="padding: 20px 10px; background-color: #f0f0f0; min-height: 80vh; display: flex; flex-direction: column; align-items: center;">
+  
+  <h2 style="margin-bottom: 5px; font-weight: bold; color: #333;">デジタルビューアー『諫親』（外部サイト版）</h2>
+  <p style="color: #666; font-size: 0.85em; margin-bottom: 20px;">
+    ※FlipHTML5という専門サービスを埋め込んだ、高機能なテスト画面です。
+  </p>
+
+  <div class="responsive-embed-container" style="width: 100%; max-width: 900px; box-shadow: 0 4px 15px rgba(0,0,0,0.15); border-radius: 4px; overflow: hidden; background: #fff;">
+    
+    <iframe src="https://online.fliphtml5.com/mitachiPTA/jbfy/" 
+            seamless="seamless" 
+            scrolling="no" 
+            frameborder="0" 
+            allowtransparency="true" 
+            allowfullscreen="true" 
+            style="width: 100%; height: 650px; border: none;">
+    </iframe>
+
+  </div>
+
+  <div style="margin-top: 30px;">
+    <a href="{{ site.baseurl }}/" style="display: inline-block; padding: 10px 20px; background: #5a738e; color: #fff; text-decoration: none; border-radius: 5px; font-size: 0.9rem; font-weight: bold; box-shadow: 0 2px 4px rgba(0,0,0,0.1);">
+      ◀ トップページに戻る
+    </a>
+  </div>
+</div>
+
+<style>
+  .responsive-embed-container iframe {
+    height: 650px !important;
+  }
+  @media (max-width: 768px) {
+    .responsive-embed-container iframe {
+      height: 480px !important;
+    }
+  }
+</style>
