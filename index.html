@@ -25,11 +25,11 @@ layout: default
         <div style="padding: 25px;">
           <h2 style="font-size: 1.4rem; margin-top: 0; margin-bottom: 15px;">
             <a href="{{ site.baseurl }}/spring2026.html" style="color: #2c3e50; text-decoration: none; font-weight: 700;">
-              令和8年春号
+              令和8年春号（通常の記事版）
             </a>
           </h2>
           <p style="color: #6c757d; font-size: 0.95rem; line-height: 1.6; margin-bottom: 20px;">
-            令和8年春号のオンライン版です。総会報告や役員紹介などのトピックが掲載されています。
+            令和8年春号のオンライン記事版です。ブログのように各トピックを個別に読むことができます。
           </p>
           <a href="{{ site.baseurl }}/spring2026.html" style="display: inline-block; background: #5a738e; color: #ffffff; padding: 10px 20px; border-radius: 4px; text-decoration: none; font-size: 0.9rem; font-weight: bold;">
             この号の記事を読む ➔
@@ -38,26 +38,51 @@ layout: default
 
       </article>
 
-    </div> <hr style="border: 0; border-top: 1px solid #eee; margin: 50px 0;">
+    </div>
 
-    <div style="text-align: center; margin: 30px auto; max-width: 600px;">
-      <a href="{{ site.baseurl }}/viewer.html" style="
-        display: inline-block;
-        padding: 15px 30px;
-        background-color: #2d72d9;
-        color: #ffffff;
-        text-decoration: none;
-        font-weight: bold;
-        font-size: 1.2em;
-        border-radius: 8px;
-        box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-        transition: background-color 0.3s;
-      ">
-        📖 デジタルブック版『諫親』を開く（テスト中）
-      </a>
-      <p style="color: #666; font-size: 0.9em; margin-top: 10px;">
-        ※印刷発行のような様式のテストビューアー画面です。
+    <hr style="border: 0; border-top: 1px solid #eee; margin: 50px 0;">
+
+    <div style="text-align: center; margin: 30px auto; max-width: 700px;">
+      <h3 style="font-size: 1.3rem; color: #333; margin-bottom: 10px; font-weight: bold;">📖 デジタルビューアー（ページめくり）の比較テスト</h3>
+      <p style="color: #666; font-size: 0.9em; margin-bottom: 25px;">
+        ※印刷発行と同じ「見開き」の様式で読める仕組みのテストです。どちらの操作感が良いか見比べてみてください。
       </p>
+
+      <div style="display: flex; flex-wrap: wrap; justify-content: center; gap: 20px;">
+        
+        <a href="{{ site.baseurl }}/viewer.html" style="
+          flex: 1;
+          min-width: 280px;
+          padding: 15px 20px;
+          background-color: #555555;
+          color: #ffffff;
+          text-decoration: none;
+          font-weight: bold;
+          font-size: 1.1em;
+          border-radius: 8px;
+          box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        ">
+          📄 案A：簡易ビューアー（サイト内製）<br>
+          <span style="font-size: 0.75em; font-weight: normal; opacity: 0.9;">（追加コスト・制限なしのシンプル版）</span>
+        </a>
+
+        <a href="{{ site.baseurl }}/viewer2.html" style="
+          flex: 1;
+          min-width: 280px;
+          padding: 15px 20px;
+          background-color: #2d72d9;
+          color: #ffffff;
+          text-decoration: none;
+          font-weight: bold;
+          font-size: 1.1em;
+          border-radius: 8px;
+          box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        ">
+          ✨ 案B：高機能ビューアー（外部提携）<br>
+          <span style="font-size: 0.75em; font-weight: normal; opacity: 0.9;">（スマホ拡大・ページ一覧付きの専門版）</span>
+        </a>
+
+      </div>
     </div>
 
   </div>
